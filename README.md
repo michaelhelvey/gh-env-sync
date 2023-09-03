@@ -25,4 +25,4 @@ to wherever on your path you would like.
 
 ## License
 
-MIT
+GPL
