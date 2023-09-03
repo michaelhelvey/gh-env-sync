@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use color_eyre::{eyre::eyre, Result};
 use reqwest::{Client, RequestBuilder, StatusCode};
 use serde::Deserialize;

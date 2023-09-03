@@ -1,2 +1,2 @@
 [workspace]
-members = ["crates/gh-client", "crates/gh-env-sync"]
+members = ["crates/gh-env-sync"]
