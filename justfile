@@ -1,2 +1,2 @@
 run:
-  cargo run -p gh-client
+  cargo run -p gh-env-sync
