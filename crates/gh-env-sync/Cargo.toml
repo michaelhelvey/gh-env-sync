@@ -1,4 +1,5 @@
 [package]
+authors = ["Michael Helvey <michael.helvey1@gmail.com>"]
 description = "A CLI to sync secrets and variables from a local TOML file to a Github repository"
 edition = "2021"
 name = "gh-env-sync"

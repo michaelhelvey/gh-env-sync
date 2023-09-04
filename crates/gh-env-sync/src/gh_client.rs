@@ -1,4 +1,3 @@
-#![allow(dead_code)]
 use color_eyre::{eyre::eyre, Result};
 use reqwest::{Client, RequestBuilder, StatusCode};
 use serde::Deserialize;
@@ -62,6 +61,11 @@ impl GithubEnvClient {
         repository_owner: &str,
         repository_name: &str,
     ) -> Result<Self> {
+        debug!(
+            "Initializing GithubEnvClient with arguments username = {}, token = {}, repository_owner = {}, repository_name = {}",
+            &username, "<token>", repository_owner, repository_name
+        );
+
         let client = Client::new();
         let repository = get_repository_details(
             &client,
@@ -138,6 +142,7 @@ impl GithubEnvClient {
 
     /// Deletes an environment.  See:
     /// https://docs.github.com/en/rest/deployments/environments?apiVersion=2022-11-28#delete-an-environment
+    #[allow(dead_code)]
     pub async fn delete_environment(&self, environment_name: &str) -> Result<()> {
         debug!(
             "Deleting environment {} for {}",
@@ -322,6 +327,7 @@ impl GithubEnvClient {
 
     /// Deletes an environment variable for the given environment.  See:
     /// https://docs.github.com/en/rest/actions/variables?apiVersion=2022-11-28#delete-an-environment-variable
+    #[allow(dead_code)]
     pub async fn delete_environment_variable(
         &self,
         environment_name: &str,
