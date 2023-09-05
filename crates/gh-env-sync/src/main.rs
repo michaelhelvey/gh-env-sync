@@ -70,7 +70,7 @@ async fn sync_environments(config: &ConfigDocument, options: &Args) -> Result<()
 
         sync_one_environment(&gh_client, environment.as_ref(), env_config_dict).await?
     } else {
-        let all_envs = gh_client.list_environments().await?;
+        let all_envs = config.keys().collect::<Vec<_>>();
 
         info!(
             "Syncing all environments ({:?}) because no --environment argument was given",
